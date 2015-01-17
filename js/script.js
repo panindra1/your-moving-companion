@@ -35,6 +35,10 @@ function loadData() {
         $nytHeaderElem.text("New York Times Articles about" + location+ "cannot be loaded");
     });
     
+    var wikirequestTimeout = setTimeout(function(){
+        $wikiElem.text("Your wiki API is taking too long");
+    });
+    
     var wikiUrl = "http://en.wikipedia.org/w/api.php?action=opensearch&search="+location+"&format=json&callback=wikicallback";
     //alert(wikiUrl);
     $.ajax( {
